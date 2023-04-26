@@ -35,22 +35,23 @@ class AAUOC {
     register(m : Member,e : Event) : void
 }
 
-AAUOC o-- Event
-AAUOC o-- Person
-AAUOC o-- Location
+AAUOC o-- "0..*" Event
+AAUOC o-- "0..*" Person
+AAUOC o-- "0..*" Location
 
 
 Event <|-- Conference
 Event <|-- BoardMeeting
+Event "0..*" -- "0..*" Member : attendsTo
+Event "0..*" -- "1" Location : IsLocatedIn
 
 Person <|-- Member
 Member <|--BoardMember
 
-Event -- Member
-Event -- Location
 
-Person -- Conference
 
-BoardMember -- BoardMeeting
+Person "0..*" -- "0..*" Conference : attendsTo
+
+BoardMember "0..*" -- "0..*" BoardMeeting : attendsTo
 
 @enduml
