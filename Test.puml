@@ -1,11 +1,11 @@
 @startuml
-'https://plantuml.com/sequence-diagram
 
-autonumber
+class Member
+class BoardMember
+class Event
+class Conference
+class BoardMeeting
+class Location
 
-Alice -> Bob: Authentication Request
-Bob --> Alice: Authentication Response
 
-Alice -> Bob: Another authentication Request
-Alice <-- Bob: another authentication Response
 @enduml
